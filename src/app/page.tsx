@@ -4,12 +4,13 @@ import { useRef, useState, useEffect } from "react";
 
 const DISCOVERY_IMAGE = "/fortnite-discovery.png";
 
+// Final tile placement, normalized to the 1920x1080 base image
 const TILE_OVERLAY = {
-  left: "7.2%",
-  top: "24%",
-  width: "14.5%",
-  height: "18%",
-  borderRadius: "8px",
+  left: "18.5%", // ~5px right adjustment
+  top: "62.1%", // ~5px down adjustment
+  width: "12.7%",
+  height: "12.4%",
+  borderRadius: "4px",
 };
 
 export default function Home() {
@@ -82,10 +83,10 @@ export default function Home() {
           <div
             className="absolute overflow-hidden transition-shadow duration-500 ease-out"
             style={{
-              left: `calc(${TILE_OVERLAY.left} + 230px)`,
-              top: `calc(${TILE_OVERLAY.top} + 437px)`,
-              width: `calc(${TILE_OVERLAY.width} - 34px)`,
-              height: `calc(${TILE_OVERLAY.height} - 60px)`,
+              left: TILE_OVERLAY.left,
+              top: TILE_OVERLAY.top,
+              width: TILE_OVERLAY.width,
+              height: TILE_OVERLAY.height,
               borderRadius: TILE_OVERLAY.borderRadius,
               boxShadow: showHighlight
                 ? "0 0 0 4px white, 0 0 40px 15px rgba(255,255,255,0.9), 0 0 80px 25px rgba(147,197,253,0.6)"
